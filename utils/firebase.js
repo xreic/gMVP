@@ -10,14 +10,14 @@ import 'firebase/storage';
  */
 
 const config = {
-  apiKey: 'AIzaSyCHIn-4BWduDME5PSI07pykoOedhtoDmq8',
-  authDomain: 'hrla35-mvp.firebaseapp.com',
-  databaseURL: 'https://hrla35-mvp.firebaseio.com',
-  projectId: 'hrla35-mvp',
-  storageBucket: 'hrla35-mvp.appspot.com',
-  messagingSenderId: '344292705723',
-  appId: '1:344292705723:web:500ebbcdbaa52b86d4309e',
-  measurementId: 'G-SGQYM7M1QP'
+  apiKey: 'AIzaSyCxmoSL625YWcvPssHm4C5Wgy-paicZH6U',
+  authDomain: 'streaks-v2.firebaseapp.com',
+  databaseURL: 'https://streaks-v2.firebaseio.com',
+  projectId: 'streaks-v2',
+  storageBucket: 'streaks-v2.appspot.com',
+  messagingSenderId: '792307279753',
+  appId: '1:792307279753:web:d5ea8b2787d50aaf666358',
+  measurementId: 'G-EDPST5GM2T'
 };
 
 firebase.initializeApp(config);

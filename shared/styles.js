@@ -1,5 +1,6 @@
 // Dependencies
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+import { css, Global } from '@emotion/core';
 import {
   Stack,
   Text,
@@ -12,19 +13,19 @@ import {
   IconButton
 } from '@chakra-ui/core';
 
-const StyledStack = styled(Stack)`
+export const StyledStack = styled(Stack)`
   background: #beebe9;
   padding: 1rem 1rem 0 1rem;
   text-align: center;
 `;
 
-const StyledAccItem = styled(AccordionItem)`
+export const StyledAccItem = styled(AccordionItem)`
   background: #f7fafc;
   border-radius: 0.5rem;
   margin-top: 0.5rem;
 `;
 
-const StyleAccHeader = styled(AccordionHeader)`
+export const StyleAccHeader = styled(AccordionHeader)`
   :hover {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
@@ -46,28 +47,28 @@ const StyleAccHeader = styled(AccordionHeader)`
   user-select: transparent;
 `;
 
-const StyledBox = styled(Box)`
+export const StyledBox = styled(Box)`
   background: #9be3de;
   border-radius: 0.5rem;
   padding: 0.75rem;
 `;
 
-const StyledBoxC = styled(Box)`
+export const StyledBoxC = styled(Box)`
   background: #f7fafc;
   border-radius: 0.5rem;
 `;
 
-const StyledText = styled(Text)`
+export const StyledText = styled(Text)`
   background: #f7fafc;
   border-radius: 0.5rem;
 `;
 
-const StyledFlex = styled(Flex)`
+export const StyledFlex = styled(Flex)`
   background: #f7fafc;
   border-radius: 0.5rem;
 `;
 
-const StyledPopoverContent = styled(PopoverContent)`
+export const StyledPopoverContent = styled(PopoverContent)`
   :focus {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
@@ -76,7 +77,7 @@ const StyledPopoverContent = styled(PopoverContent)`
   }
 `;
 
-const StyledButton = styled(Button)`
+export const StyledButton = styled(Button)`
   :focus {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
@@ -85,7 +86,7 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const StyledIconButton = styled(IconButton)`
+export const StyledIconButton = styled(IconButton)`
   :focus {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
@@ -94,15 +95,21 @@ const StyledIconButton = styled(IconButton)`
   }
 `;
 
-export {
-  StyledStack,
-  StyledAccItem,
-  StyleAccHeader,
-  StyledBox,
-  StyledBoxC,
-  StyledText,
-  StyledFlex,
-  StyledPopoverContent,
-  StyledButton,
-  StyledIconButton
-};
+export const globalStyles = (
+  <Global
+    styles={css`
+      html {
+        width: 100%;
+      }
+      body {
+        position: absolute;
+        display: flex;
+        direction: column;
+        width: 100%;
+        height: 100%;
+        background: #beebe9;
+        justify-content: center;
+      }
+    `}
+  />
+);

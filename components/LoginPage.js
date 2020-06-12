@@ -1,17 +1,14 @@
 // Dependencies
-import { signInWithGoogle, signInWithEmail } from '../../firebase.js';
-import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import Link from 'next/link';
+import { signInWithGoogle, signInWithEmail } from '../utils/firebase';
 
 // Chakra + Forms
 import { Formik, Form } from 'formik';
 import { useToast, Box, Flex, Button, Image } from '@chakra-ui/core';
-import { loginValid } from '../formHelpers/validators.js';
+import ValidatorField from '../utils/ValidatorField';
+import { loginValid } from '../utils/ValidationSchema';
 
-// Components
-import ValidatorField from '../formHelpers/ValidatorField.jsx';
-
-const Login = () => {
+const LoginPage = () => {
   const toast = useToast();
 
   return (
@@ -98,45 +95,50 @@ const Login = () => {
               </Button>
 
               <Flex justify="space-between" align="center">
-                <Link to="/reset" style={{ textDecoration: 'none' }}>
-                  <Button
-                    bg="#F7EEC7"
-                    pt="10px"
-                    pb="10px"
-                    rounded="20px"
-                    fontWeight="semibold"
-                    color="white"
-                    w="100%"
-                    h="40px"
-                    color="#747474"
-                    // mb="60%"
-                    _hover={{ bg: '#FF5454' }}
-                    _focus={{ boxShadow: 'outline' }}
-                    isDisabled={isSubmitting}
-                    isLoading={isSubmitting}
-                  >
-                    Forgot Password
-                  </Button>
+                <Link href="/reset">
+                  <a>
+                    <Button
+                      bg="#F7EEC7"
+                      pt="10px"
+                      pb="10px"
+                      rounded="20px"
+                      fontWeight="semibold"
+                      color="white"
+                      w="100%"
+                      h="40px"
+                      color="#747474"
+                      // mb="60%"
+                      _hover={{ bg: '#FF5454' }}
+                      _focus={{ boxShadow: 'outline' }}
+                      isDisabled={isSubmitting}
+                      isLoading={isSubmitting}
+                    >
+                      Forgot Password
+                    </Button>
+                  </a>
                 </Link>
-                <Link to="/" style={{ textDecoration: 'none' }}>
-                  <Button
-                    bg="#F7EEC7"
-                    pt="10px"
-                    pb="10px"
-                    rounded="20px"
-                    fontWeight="semibold"
-                    color="white"
-                    w="100%"
-                    h="40px"
-                    color="#747474"
-                    // mb="60%"
-                    _hover={{ bg: '#FF5454' }}
-                    _focus={{ boxShadow: 'outline' }}
-                    isDisabled={isSubmitting}
-                    isLoading={isSubmitting}
-                  >
-                    Cancel
-                  </Button>
+
+                <Link href="/">
+                  <a>
+                    <Button
+                      bg="#F7EEC7"
+                      pt="10px"
+                      pb="10px"
+                      rounded="20px"
+                      fontWeight="semibold"
+                      color="white"
+                      w="100%"
+                      h="40px"
+                      color="#747474"
+                      // mb="60%"
+                      _hover={{ bg: '#FF5454' }}
+                      _focus={{ boxShadow: 'outline' }}
+                      isDisabled={isSubmitting}
+                      isLoading={isSubmitting}
+                    >
+                      Cancel
+                    </Button>
+                  </a>
                 </Link>
               </Flex>
             </Form>
@@ -147,4 +149,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;
