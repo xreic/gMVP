@@ -20,14 +20,15 @@ const config = {
   measurementId: 'G-EDPST5GM2T'
 };
 
-firebase.initializeApp(config);
+if (!firebase.apps.length) {
+  firebase.initializeApp(config);
 
-/**
- * Remove this later
- * For debugging purposes
- */
-
-window.firebase = firebase;
+  /**
+   * Remove this later
+   * For debugging purposes
+   */
+  window.firebase = firebase;
+}
 
 /**
  * Firebase Solutions

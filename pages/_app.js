@@ -5,6 +5,8 @@ import { CacheProvider } from '@emotion/core';
 // Use only { cache } from 'emotion'. Don't use { css }.
 import { cache } from 'emotion';
 import { globalStyles } from '../shared/styles';
+import VerifyLogin from '../components/VerifyLogin';
+import UserProvider from '../utils/UserContext';
 
 class MyApp extends App {
   // static async getInitialProps({ Component, ctx }) {
@@ -24,7 +26,11 @@ class MyApp extends App {
         {globalStyles}
         <ThemeProvider>
           <CSSReset />
-          <Component {...pageProps} />
+          <UserProvider>
+            <VerifyLogin>
+              <Component {...pageProps} />
+            </VerifyLogin>
+          </UserProvider>
         </ThemeProvider>
       </CacheProvider>
     );
